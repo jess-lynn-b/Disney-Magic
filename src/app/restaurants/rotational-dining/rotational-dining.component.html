@@ -1,0 +1,35 @@
+<app-root
+
+
+>
+
+</app-root>
+
+<div class="container">
+  <div class="column">
+<div class="col-sm-4"
+*ngFor= "let dine of mainDine">
+
+<hr>
+ <a href="#" class="list-group-item clearfix">
+
+  <div class="float-left">
+    <h4 class="list-group-item-heading">
+      {{ dine.title }}
+    </h4>
+    <p class="list-group-item-text">
+      {{ dine.details }}
+    </p>
+  </div>
+  <div class= "flex-container">
+    <img src="{{ dine.imagePath }}"
+     alt="{{ dine.title }}"
+     class="img-responsive rounded"
+     style="max-height:85px;"
+     >
+  </div>
+ </a>
+</div>
+</div>
+</div>
+
