@@ -1,0 +1,27 @@
+<div *ngFor="let palo of paloData"><a
+  href="#"
+  class="list-group-item ">
+<div class="row justify-between">
+  <div class="col-xs-2">
+  </div>
+  <div class="container">
+    <div class="content">
+  <h3 class="list-group-item-heading">
+  {{ palo.title }}</h3>
+  <p class="list-group-item-text">
+    {{ palo.details }} </p></div>
+  <span class="pull-right">
+  <img
+  [src]= "palo.imagePath"
+  alt="{{ palo.title }}"
+  style="max-height: 100px"
+  class="img-responsive rounded"
+  margin-left="auto"
+  margin-right="auto"
+  display="block">
+  </span>
+  </div>
+</div>
+</a>
+</div>
+

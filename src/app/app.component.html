@@ -1,20 +1,33 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
-<div
+<app-navbar (navEmit)="changeTab($event)"></app-navbar>
+<!--<div
   class="flex-container"
   style="
     background-image: url('https://unclewalts.com/wp-content/uploads/2018/10/disney-cruise-line-castaway-cay.jpg');
-    height: 900px;
-  "
->
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
+    height: auto
+    background-size: cover">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">-->
+    <div class="justify-content-center align-items-center h-100">
+      <div class="header"
+      class="mask" style="background-color: rgba(8, 165, 243, 0.6)">
         <h1 class="text-center">Disney Magic Cruise Ship</h1>
-      </div>
-    </div>
-  </div>
-  <app-restaurants> </app-restaurants>
-
-  <app-rotational-dining> </app-rotational-dining>
+        <div id="overlay">
+          <div id="text">
+        <app-rotate-details *ngIf="nav=='rotate-dining'"></app-rotate-details></div>
+    <section class="image-1"
+      style ="
+    background-image: url('https://unclewalts.com/wp-content/uploads/2018/10/disney-cruise-line-castaway-cay.jpg')">
+  </section>
 </div>
+</div>
+<div class="justify-content-center">
+  <app-casual *ngIf="nav=='casual'"></app-casual>
+</div>
+
+    <section class="image-2">
+    </section>
+
+    <section class="image-3">
+    </section>
+
+    <section class="image-4">
+    </section>

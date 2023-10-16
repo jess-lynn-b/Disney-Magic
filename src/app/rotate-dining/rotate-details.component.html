@@ -1,0 +1,22 @@
+<div *ngFor="let dine of rotateData"><a
+href="#"
+class="list-group-item ">
+<div class="container">
+  <div class="content">
+<h3 class="list-group-item-heading">
+{{ dine.title }}</h3>
+<p class="list-group-item-text">
+  {{ dine.details }} </p></div>
+<span class="pull-right">
+<img
+[src]= "dine.imagePath"
+alt="{{ dine.title }}"
+style="max-height: 100px"
+class="img-responsive rounded"
+margin-left="auto"
+margin-right="auto"
+display="block">
+</span>
+</div>
+</a>
+</div>
