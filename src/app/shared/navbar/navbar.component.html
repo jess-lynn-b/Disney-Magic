@@ -9,14 +9,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"  routerLinkActive="active">
-        <a class="nav-link" routerLink="/" (click)="emitNav('rotate-dining')">Rotational Dining <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/Welcome" >Welcome</a></li>
+        <li class="nav-item"  routerLinkActive="active">
+        <a class="nav-link" routerLink="/RotationalDining" >Rotational Dining</a></li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/CasualDining"
+        >Casual Dining</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/"
-        (click)="emitNav('casual')">Casual Dining</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/Palo" (click)="emitNav('palo')">Palo</a>
+        <a class="nav-link" routerLink="/Palo" >Palo</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/clubs-and-lounges">Clubs and Lounges</a>
@@ -27,7 +28,6 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
-
     </ul>
   </div>
 </div>

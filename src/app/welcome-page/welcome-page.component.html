@@ -1,0 +1,25 @@
+<div id="ship">
+  <section class="image-1"
+style ="
+background-image: url('https://unclewalts.com/wp-content/uploads/2018/10/disney-cruise-line-castaway-cay.jpg')"></section>
+<div class="info">
+  <h3>Ultimate guide to all things food...</h3>
+  <p>
+  Created with your entire family in mind, the Disney Magic combines classic nostalgia and modern amenities with Disney’s signature service. Step aboard for spacious staterooms that ensure everyone’s comfort. Get lost in original Broadway-quality entertainment. Indulge in first-rate dining. From bow to stern, set sail for unforgettable storytelling that only Disney could bring to life.
+  </p></div>
+<div *ngFor="let welcome of welcomeData"><a
+  class= "list-group-item-text">
+ <div class="boxed">
+  <h4 class="list-group-item-heading">
+  {{ welcome.title }}</h4>
+  <p class="list-group-item-text">
+    {{ welcome.details }} </p>
+    <p class="list-group-item-text">
+      {{ welcome.location }} </p>
+</div>
+</a>
+</div>
+</div>
+
+
+

@@ -1,0 +1,28 @@
+h3 {
+  padding-top: 5%;
+  color:rgb(255, 6, 6);
+  text-shadow: 2px 2px rgb(0, 0, 0);
+}
+p{
+  text-align: left;
+}
+.info{
+  position:relative;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px black;
+  text-indent: 5%;
+}
+.boxed{
+  border: 3px solid black;
+  box-sizing: content-box;
+  width: 150px;
+  text-indent: 8%;
+}
+h4{
+  color: darkblue
+}
+
+
+
+
+

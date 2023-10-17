@@ -1,29 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RotateDetailsComponent } from './rotate-dining/rotate-details.component';
-import { RotationalDiningService } from './rotate-dining/rotational.service';
 import { CasualRestaurantsComponent } from './Casual-Food/Casual.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { PaloComponent } from './palo/palo.component';
+
 
 const routes: Routes = [
-  { path: '', component: RotationalDiningService },
-  { path: 'casualDining', component: CasualRestaurantsComponent},
+  { path: '', redirectTo: '/Welcome', pathMatch: 'full'},
+  { path: 'Welcome', component: WelcomePageComponent},
+  { path: 'RotationalDining', component: RotateDetailsComponent },
+  { path: 'CasualDining', component: CasualRestaurantsComponent},
+  { path: 'Palo', component: PaloComponent},
   ];
 
   @NgModule({
-  declarations: [
-    AppComponent,
-    CommonModule,
-    NgModule,
-    RotateDetailsComponent,
-    RotationalDiningService
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
+  imports:
+  [ RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

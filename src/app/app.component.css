@@ -1,24 +1,21 @@
+h1{
+  color: darkblue;
+}
+.header{
+  background-color: rgba(8, 165, 243, 0.704);
+  position: absolute;
+  align-items: center;
+  max-height: 8%;
+  text-shadow: 1px 1px white;
+}
 .image-1{
-  height:100vh;
+  height:150vh;
   width: 100%;
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
-#overlay {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: white;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent );
-}
-
-
-
-
-
 .image-2 {
 background-image: url("https://images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }

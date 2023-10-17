@@ -6,6 +6,10 @@ import { RotateDetailsComponent } from './rotate-dining/rotate-details.component
 import { SharedComponent } from './shared/shared.component';
 import { NavbarComponent } from './shared/navbar/NavbarComponent.';
 import { PaloComponent } from './palo/palo.component';
+import { AppRoutingModule } from './app-routing.module';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,11 @@ import { PaloComponent } from './palo/palo.component';
     RotateDetailsComponent,
     SharedComponent,
     NavbarComponent,
-    PaloComponent
+    PaloComponent,
+    WelcomePageComponent,
   ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule, AppRoutingModule ],
   providers: [],
   bootstrap: [AppComponent]
 })
