@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PaloDine } from '../shared/models/palo-dine.model';
 import { PaloDiningService } from './palo.service';
 
@@ -23,5 +23,6 @@ export class PaloComponent{
   }
   ngOnInit(){
     this.paloData =
-    this.paloService.getData();}
+    this.paloService.getData();
+  }
 }

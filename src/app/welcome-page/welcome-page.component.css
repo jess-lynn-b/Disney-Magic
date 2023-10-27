@@ -1,6 +1,10 @@
+image-1{
+  size: full;
+}
 h3 {
   padding-top: 5%;
-  color:rgb(255, 6, 6);
+  text-align: center;
+  color:crimson;
   text-shadow: 2px 2px rgb(0, 0, 0);
 }
 p{
@@ -8,6 +12,7 @@ p{
 }
 .info{
   position:relative;
+  padding: 1em;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px black;
   text-indent: 5%;
@@ -20,6 +25,22 @@ p{
 }
 h4{
   color: darkblue
+}
+.top-left{
+  top: 8px;
+  left: 16px;
+}
+input.ng-vaild.ng-touched,
+textarea.ng-vaild.ng-touched {
+  border: 1px solid red;
+}
+.transparent-bg{
+  background: transparent;
+}
+form{
+  background-color: aliceblue;
+  width: 100%;
+  padding: 1em;
 }
 
 

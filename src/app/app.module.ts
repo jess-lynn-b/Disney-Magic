@@ -7,9 +7,9 @@ import { SharedComponent } from './shared/shared.component';
 import { NavbarComponent } from './shared/navbar/NavbarComponent.';
 import { PaloComponent } from './palo/palo.component';
 import { AppRoutingModule } from './app-routing.module';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-
-
+import { WelcomeComponent } from './welcome-page/welcome-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +19,11 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     SharedComponent,
     NavbarComponent,
     PaloComponent,
-    WelcomePageComponent,
+    WelcomeComponent,
+    ClubsLoungesComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule ],
+    BrowserModule, ReactiveFormsModule, AppRoutingModule, ],
   providers: [],
   bootstrap: [AppComponent]
 })

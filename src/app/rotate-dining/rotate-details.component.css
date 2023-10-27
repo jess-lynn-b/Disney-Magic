@@ -1,14 +1,17 @@
-h3{
+h3 {
   color:midnightblue;
   text-align: center;
 }
-p{
+p {
   text-indent: 5%;
 }
-img{
+img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
+}
+.transparent-bg{
+  background: transparent;
 }
 
