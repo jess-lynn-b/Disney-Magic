@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
     this.signupForm = new FormGroup({
       'userData' : new FormGroup({
-        'username' : new FormControl
+        'yourName' : new FormControl
         (null, [Validators.required]),
           'email' : new FormControl
         (null, [Validators.required, Validators.email]),
@@ -31,7 +31,7 @@ export class WelcomeComponent implements OnInit {
     );
     this.signupForm.setValue({
       'userData' : {
-        'username' : 'Minnie Mouse',
+        'yourName' : 'Minnie Mouse',
         'email' : 'Magical_Days@sample.com'
       },
         'kid' : 'yes',
@@ -40,7 +40,7 @@ export class WelcomeComponent implements OnInit {
     });
     this.signupForm.patchValue({
       'userData' : {
-        'username' : 'Mickey Mouse',
+        'yourName' : 'Mickey Mouse',
       },
     });
   }

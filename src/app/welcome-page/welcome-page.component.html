@@ -2,26 +2,35 @@
     style =
     "background-image: url('https://dclfan.com/wp-content/uploads/2020/08/disney-magic-cruise-ship-ocean.jpg')">
 <div class="info">
-  <h3>Ultimate guide to all things food...</h3>
+  <h3>Ultimate guide to all things Magic...</h3>
   <p>
-  Created with your entire family in mind, the Disney Magic combines classic nostalgia and modern amenities with Disney’s signature service. Step aboard for spacious staterooms that ensure everyone’s comfort. Get lost in original Broadway-quality entertainment. Indulge in first-rate dining. From bow to stern, set sail for unforgettable storytelling that only Disney could bring to life.
+  Created with your entire family in mind, the Disney Magic combines classic nostalgia and modern amenities with Disney’s signature service. Step aboard for spacious staterooms that ensure everyone’s comfort. All staterooms feature innovative comforts and modern amenities for families looking to travel the high seas in high style.
+  </p>
+  <p>
+  Get lost in original Broadway-quality entertainment. Enjoy Broadway style shows everynight of the cruise before or after your evening dining roation. On the Magic currently is: Tangled: The Musical, Twice Charmed: An Orginal Twist on the Cinderella Story, Disney Dreams- An Enchanted Classic.
+  </p>
+  <p>
+    Deck Parties are always alot of fun on the Disney Cruise Line. They start from the moment you leave port with 'Mickey's Sail-A-Wave Party!… A Bon Voyage Celebration'. Pirate Night is the ultimate deck party in the Caribbean. Enjoy an entertaining pirate show, as well as interactive games with some special surprises! Fireworks from the ship over the ocean!
+  </p>
+  <p>
+  Indulge in first-rate dining. From bow to stern, set sail for unforgettable storytelling that only Disney could bring to life. Disney has rotational diners that will make sure that everynight is a different experience in a one of a kind dining room. Higher end dining is also available for additional cost and reservations are needed.
   </p>
 </div>
-<div class="container container-small transparent-bg">
+<div class="container-fluid">
   <div class="row transparent-bg">
     <div class="overlay-text transparent-bg">
       <form class="form" [formGroup]="signupForm"(ngSubmit)="onSubmit()">
         <div formGroupName="userData">
         <div class="form-group">
-          <label for="username">Please enter your Username:</label>
+          <label for="yourName">Please enter your name:</label>
           <input
           type="text"
-          id="username"
-          formControlName="username"
+          id="yourName"
+          formControlName="yourName"
           class="form-control">
           <span
           *ngIf="!signupForm.valid && signupForm.touched"
-          class="help-block">Please enter a vaild Username!</span>
+          class="help-block">Please enter a vaild Name!</span>
         </div>
         <div class="form-group">
           <label for="email">Email:</label>

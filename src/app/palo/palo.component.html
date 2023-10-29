@@ -1,29 +1,23 @@
-<div class="image-container"
-style="background-image:url ('https://disneycruiselineblog.com/wp-content/uploads/2019/11/Disney-Dream-Palo-Sunset_20191011.jpg')">
-<div *ngFor="let palo of paloData"><a
-  class="list-group-item ">
-<div class="row justify-between">
-  <div class="col-xs-2">
-  </div>
-  <div class="container">
-    <div class="content">
-  <h3 class="list-group-item-heading">
+<div class="image-container">
+<div *ngFor="let palo of paloData"
+  class="form-group">
+  <a class="row justify-between">
+    <div class="container">
+      <div class="overlay-text">
+        <span class="pull-right">
+          <img
+          [src]= "palo.imagePath"
+          alt="{{ palo.title }}"
+          style="max-height: 90px"
+          class="img-responsive rounded">
+          </span>
+  <h3 class="form-group-heading">
   {{ palo.title }}</h3>
-  <p class="list-group-item-text">
+  <p class="form-group-text">
     {{ palo.details }} </p></div>
-  <span class="pull-right">
-  <img
-  [src]= "palo.imagePath"
-  alt="{{ palo.title }}"
-  style="max-height: 100px"
-  class="img-responsive rounded"
-  margin-left="auto"
-  margin-right="auto"
-  display="block">
-  </span>
   </div>
+  </a>
 </div>
-</a>
 </div>
-</div>
+
 

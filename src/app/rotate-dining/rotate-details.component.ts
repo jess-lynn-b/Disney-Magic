@@ -17,6 +17,7 @@ export class RotateDetailsComponent implements OnInit{
   public rotateDataDetails: FamilyDine | undefined;
 
 
+
   constructor(
     private rotateService: RotationalDiningService,
     private router: Router,
@@ -37,7 +38,7 @@ export class RotateDetailsComponent implements OnInit{
     })
   }
   toggleDetails(){
-    this.router.navigate('../', this.rotateDataDetails?.id,)
+    this.router.navigate(['../',this.rotateDataDetails?.id,this])
 
   }
 }

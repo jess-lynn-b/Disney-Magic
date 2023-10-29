@@ -1,14 +1,15 @@
-<div *ngFor="let casual of casualData"><a
-  class="list-group-item ">
-<div class="row justify-between">
-  <div class="col-xs-2">
-  </div>
+<div
+class="image-container"
+  style = "background-image: url ('https://www.google.com/url?sa=i&url=https%3A%2F%2Fallears.net%2F2019%2F11%2F04%2Fwere-ranking-the-disney-cruise-line-ships-by-their-waterslides-and-pools%2F&psig=AOvVaw1YbHpgWkJVjFrQp6UuAoi8&ust=1698631907026000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMDVtJOXmoIDFQAAAAAdAAAAABAD')">
+<div *ngFor="let casual of casualData"
+class="form-group">
+<a class="row">
   <div class="container">
-    <div class="content">
-  <h3 class="list-group-item-heading">
+    <div class="overlay-text transparent-bg">
+  <h3 class="form-group-heading">
   {{ casual.title }}</h3>
-  <p class="list-group-item-text">
-    {{ casual.details }} </p></div>
+  <p class="form-group-item">
+    {{ casual.details }}></p>
   <span class="pull-right">
   <img
   [src]= "casual.imagePath"
@@ -23,3 +24,5 @@
 </div>
 </a>
 </div>
+</div>
+

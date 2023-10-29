@@ -1,15 +1,43 @@
+.image-container{
+  background-image: url(
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.disneyfanatic.com%2Four-review-of-the-disney-magic-cruise-ship-10-reasons-we-love-it-2%2F&psig=AOvVaw1yroZ7yZJ5UHE6CsOrL5eh&ust=1698638122953000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjv4N2umoIDFQAAAAAdAAAAABAD"
+  );
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 h3 {
   color:midnightblue;
   text-align: center;
+  font-size: 2em;
+  text-decoration: underline;
+  letter-spacing: 2px;
 }
-p {
+P {
   text-indent: 5%;
+  font-size: 1em;
 }
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: auto;
+  height: auto;
+}
+.row{
+ background-color: transparent;
+}
+.list-group-item{
+  text-align: center;
+  background-color: transparent;
+}
+.form-group {
+  background: transparent;
+  padding: 10%;
+}
+.overlay-text{
+  background-color: transparent;
 }
 .transparent-bg{
   background: transparent;

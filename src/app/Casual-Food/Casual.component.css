@@ -1,13 +1,41 @@
+.image-container{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 h3{
   color: midnightblue;
   text-align: center;
+  font-size: 2em;
+  text-decoration:underline;
+  letter-spacing: 3px;
+  padding-top: 5%;
 }
-p{
+P{
   text-indent: 5%;
+  font-size: 1em;
+  padding: 5%;
 }
 img{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: auto;
+  height: auto;
+}
+form-group{
+  background-color: transparent;
+}
+.row{
+  background-color: transparent;
+}
+content{
+  background-color: transparent;
+}
+.container{
+  background-color: transparent;
+}
+.transparent-bg{
+  background-color: transparent;
 }

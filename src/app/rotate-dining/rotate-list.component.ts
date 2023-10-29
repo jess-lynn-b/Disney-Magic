@@ -9,12 +9,7 @@ import { FamilyDine } from "../shared/models/family-dine.model";
 })
 
 export class RotateListComponent {
-  rotateDetails: Partial<FamilyDine> = {
-    title: 'title',
-    details: 'details',
-    imagePath: 'imagePath',
-  };
-  detailsVisable = false;
+
 
   constructor (
     private route: ActivatedRoute,
@@ -22,8 +17,5 @@ export class RotateListComponent {
     private rotatedetails: RotateDetailsComponent
   ){}
 
-  toggleDetails(){
-    this.detailsVisable = !this.detailsVisable;
 
-  }
 }

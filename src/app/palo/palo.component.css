@@ -1,3 +1,39 @@
 .image-container{
- size: full;
+  background-image: url("https://disneycruiselineblog.com/wp-content/uploads/2019/11/Disney-Dream-Palo-Sunset_20191011.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 35%;
+}
+h3{
+text-align: center;
+color: whitesmoke;
+text-shadow: 3px 3px darkred;
+font-size: 3.5em;
+text-decoration:underline;
+letter-spacing: 7px;
+}
+P{
+  text-indent: 5%;
+  color:ghostwhite;
+  text-shadow: 1.5px 1.5px black;
+  font-size: 1em;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+}
+.form-group{
+  margin-top: -80%;
+  margin-right: -40%;
+  margin-left: -40%;
+  display: center;
+  padding: 10%;
+}
+.transparent-bg{
+  background: transparent;
 }
