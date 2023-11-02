@@ -30,6 +30,7 @@ export class RotateDetailsComponent implements OnInit{
     this.rotateData = [];
        }
   detailsVisable = false;
+
   ngOnInit() {
     this.rotateData = this.rotateService.getData();
     this.route.params.subscribe((params: Params )=> {
@@ -39,6 +40,6 @@ export class RotateDetailsComponent implements OnInit{
   }
   toggleDetails(){
     this.router.navigate(['../',this.rotateDataDetails?.id,this])
-
   }
+
 }

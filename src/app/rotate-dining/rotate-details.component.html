@@ -2,16 +2,16 @@
 <div *ngFor="let dine of rotateData"
 class="form-group">
   <a
-class="row transparent-bg">
-  <div class="container transparent-bg">
-    <div class="overlay-text
-    transparent-bg">
+class="row">
+  <div class="container">
+    <div class="overlay-text">
       <h3
       class="form-group-heading"
       >{{ dine.title }}
     </h3>
       <p class="form-group-item">
-      {{ dine.details }} </p></div>
+      {{ dine.details }} 
+    </p></div>
       <span class="pull-right">
         <img
           [src]= "dine.imagePath"

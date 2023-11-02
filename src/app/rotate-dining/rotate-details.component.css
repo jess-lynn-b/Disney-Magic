@@ -1,22 +1,29 @@
 .image-container{
   background-image: url(
-    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.disneyfanatic.com%2Four-review-of-the-disney-magic-cruise-ship-10-reasons-we-love-it-2%2F&psig=AOvVaw1yroZ7yZJ5UHE6CsOrL5eh&ust=1698638122953000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjv4N2umoIDFQAAAAAdAAAAABAD"
+    "https://dclnews.com/tachyon/sites/4/2013/10/1024ZX_0842KP.jpg"
   );
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: saturate(70%) ;
 }
 h3 {
-  color:midnightblue;
+  color:ghostwhite;
+  text-shadow: 3px 3px black;
   text-align: center;
-  font-size: 2em;
+  font-size: 40px;
   text-decoration: underline;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 P {
+  color: black;
+  text-shadow: 1px 1px whitesmoke;
   text-indent: 5%;
-  font-size: 1em;
+  font-size: 18px;
+  font-weight: 500;
+  background: rgba(245, 245, 245, 0.605);
+  padding: 10px;
 }
 img {
   display: block;
@@ -24,6 +31,7 @@ img {
   margin-right: auto;
   width: auto;
   height: auto;
+  filter: none;
 }
 .row{
  background-color: transparent;

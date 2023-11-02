@@ -1,0 +1,39 @@
+.image-container{
+  background-image: url("https://www.disneyfoodblog.com/wp-content/uploads/2022/01/disney-cruise-line-restaurants-magic-cove-cafe.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 35%;
+  }
+h3{
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+  font-size: 3em;
+  text-decoration: underline;
+  letter-spacing: 3px;
+}
+P{
+  text-indent: 5%;
+  color: whitesmoke;
+  text-shadow: 1px 1 px black;
+  font-size: 1em;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+}
+.form-group{
+  margin-top: -70%;
+  margin-right: -40%;
+  margin-left: -40%;
+  display: center;
+  padding: 90px;
+}
+.transparent-bg{
+  background: transparent;
+}

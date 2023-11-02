@@ -9,7 +9,7 @@ import { CasualDine } from '../shared/models/casual-dine.model';
 export class CasualDiningService {
   private myCasualDineArray: CasualDine[] = [
     new CasualDine
-    ('Duck-In Diner','Donalds Favorite quick-bite spots known for its fresh, Middle Eastern inspired shawarma and classic American fare like hamburgers and hotdogs. The famous chicken tenders are available here as well. This is located on Deck 9 near all of the outdoor pool areas. Available for lunch and early diner from 11am to 6pm this is included in your cruise.', 'https://www.dqtravel.net/ezoimgfmt/i0.wp.com/www.dqtravel.net/wp-content/uploads/2020/05/Duck-in-diner.jpg?resize=1024%2C683&ssl=1&ezimgfmt=ng:webp/ngcb2'),
+    ('Duck-In Diner','Donalds Favorite quick-bite spots known for its fresh, Middle Eastern inspired shawarma and classic American fare like hamburgers and hotdogs. The famous chicken tenders are available here as well. This is located on Deck 9 near all of the outdoor pool areas. Available for lunch and early diner from 11am to 6pm this is included in your cruise. ', 'https://www.dqtravel.net/ezoimgfmt/i0.wp.com/www.dqtravel.net/wp-content/uploads/2020/05/Duck-in-diner.jpg?resize=1024%2C683&ssl=1&ezimgfmt=ng:webp/ngcb2'),
     new CasualDine
     ('Pinocchios Pizzeria', 'Savor a slice of sizzling pizza throughout the day at this outdoor eatery located next to Goofys Pool on deck 9. Let your heart come alive with pepperoni or let your conscience be your guide as you choose between vegetarian, Hawaiian or plan cheese. Pizza is usually available between 11am and 6pm, this is included in your cruise.','https://www.disneyfoodblog.com/wp-content/uploads/2022/01/disney-cruise-line-restaurants-magic-pinocchios-pizzeria.png'),
     new CasualDine
@@ -25,3 +25,4 @@ export class CasualDiningService {
     return this.myCasualDineArray;
   }
 }
+

@@ -1,20 +1,27 @@
 .image-container{
-  height: 100%;
+  background-image: url(
+    "https://www.disneycruisemomblog.com/wp-content/uploads/2022/04/RDC_9817.jpg"
+  );
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: blur(.3px) ;
 }
 h3{
   color: midnightblue;
+  text-shadow: 3px 2px whitesmoke;
   text-align: center;
-  font-size: 2em;
+  font-size: 45px;
   text-decoration:underline;
   letter-spacing: 3px;
   padding-top: 5%;
 }
 P{
   text-indent: 5%;
-  font-size: 1em;
+  color: darkblue;
+  font-size: 17px;
+  background: rgba(245, 245, 245, 0.534);
   padding: 5%;
 }
 img{
@@ -26,6 +33,7 @@ img{
 }
 form-group{
   background-color: transparent;
+
 }
 .row{
   background-color: transparent;

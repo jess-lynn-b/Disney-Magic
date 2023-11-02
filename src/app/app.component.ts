@@ -15,11 +15,7 @@ export class AppComponent {
  ngOnInit() {
 
  }
-
  changeTab($event: string) {
   this.nav = $event;
  }
-
-
-
 }

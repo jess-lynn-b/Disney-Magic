@@ -15,7 +15,7 @@ const routes: Routes = [
   ] },
   { path: 'CasualDining', component: CasualRestaurantsComponent},
   { path: 'Palo', component: PaloComponent},
-  { path: 'Clubs-Lounges', component: ClubsLoungesComponent}
+  { path: 'clubs-and-lounges', component: ClubsLoungesComponent}
 
   ];
 

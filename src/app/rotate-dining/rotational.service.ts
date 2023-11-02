@@ -20,11 +20,3 @@ export class RotationalDiningService {
       return details;
     }
   }
-// Add to favorites
-
-// Delete from favorites
-
-
-
-
-
