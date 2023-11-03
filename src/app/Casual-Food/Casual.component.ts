@@ -6,7 +6,8 @@ import { CasualDiningService } from './casual.service';
   templateUrl: './Casual.component.html',
   styleUrls: ['./Casual.component.css']
 })
-export class CasualRestaurantsComponent{
+export class CasualRestaurantsComponent implements OnInit{
+
   public title: string;
   public details: string;
   public imagePath: string;
@@ -21,5 +22,6 @@ export class CasualRestaurantsComponent{
     this.casualData = [];
   }
   ngOnInit() {
-    this.casualData = this.casualSerivce.getData();}
+    this.casualData = this.casualSerivce.getData();
+  }
 }

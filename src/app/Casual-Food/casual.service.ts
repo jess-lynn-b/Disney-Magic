@@ -7,6 +7,11 @@ import { CasualDine } from '../shared/models/casual-dine.model';
   providedIn: 'root'
 })
 export class CasualDiningService {
+  setCasualDine(casualdine: CasualDine[] | []){
+    console.log('%c casualdine:', 'color:red;', casualdine);
+    this.myCasualDineArray = casualdine ||[];
+  }
+
   private myCasualDineArray: CasualDine[] = [
     new CasualDine
     ('Duck-In Diner','Donalds Favorite quick-bite spots known for its fresh, Middle Eastern inspired shawarma and classic American fare like hamburgers and hotdogs. The famous chicken tenders are available here as well. This is located on Deck 9 near all of the outdoor pool areas. Available for lunch and early diner from 11am to 6pm this is included in your cruise. ', 'https://www.dqtravel.net/ezoimgfmt/i0.wp.com/www.dqtravel.net/wp-content/uploads/2020/05/Duck-in-diner.jpg?resize=1024%2C683&ssl=1&ezimgfmt=ng:webp/ngcb2'),

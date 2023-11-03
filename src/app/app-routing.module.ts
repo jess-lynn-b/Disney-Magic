@@ -5,6 +5,7 @@ import { RotateDetailsComponent } from './rotate-dining/rotate-details.component
 import { CasualRestaurantsComponent } from './Casual-Food/Casual.component';
 import { PaloComponent } from './palo/palo.component';
 import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
+import { CastawayCayComponent } from './castaway-cay/castaway-cay.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,8 @@ const routes: Routes = [
   ] },
   { path: 'CasualDining', component: CasualRestaurantsComponent},
   { path: 'Palo', component: PaloComponent},
-  { path: 'clubs-and-lounges', component: ClubsLoungesComponent}
-
+  { path: 'clubs-and-lounges', component: ClubsLoungesComponent},
+  { path: 'CastawayCay', component: CastawayCayComponent},
   ];
 
   @NgModule({

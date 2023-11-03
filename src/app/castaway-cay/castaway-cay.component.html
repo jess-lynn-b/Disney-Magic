@@ -1,0 +1,25 @@
+<div class="image-container">
+  <div
+  *ngFor="let castaway of castawayData"
+  class="form-group">
+  <a class="row">
+    <div class="container">
+      <div class="overlay-text">
+        <h3 class="form-group-heading">
+          {{ castaway.title }}</h3>
+          <p class="form-group-item">
+            {{ castaway.details }}</p>
+            <span class="pull-right">
+              <img
+              [src]="castaway.imagePath"
+              alt="{{ castaway.title }}"
+              style="max-height: 100px"
+              class="img-responsive rounded"
+              margin-left="auto"
+              display="block">
+            </span>
+      </div>
+    </div>
+    </a>
+  </div>
+</div>

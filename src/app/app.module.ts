@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './welcome-page/welcome-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CastawayCayComponent } from './castaway-cay/castaway-cay.component'
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
     PaloComponent,
     WelcomeComponent,
     ClubsLoungesComponent,
+    CastawayCayComponent,
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, AppRoutingModule, ],
+    HttpClientModule, BrowserModule, ReactiveFormsModule, AppRoutingModule, ],
   providers: [],
   bootstrap: [AppComponent]
 })

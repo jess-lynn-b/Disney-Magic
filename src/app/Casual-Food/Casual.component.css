@@ -20,8 +20,9 @@ h3{
 P{
   text-indent: 5%;
   color: darkblue;
+  text-shadow: 1px 1px whitesmoke;
   font-size: 17px;
-  background: rgba(245, 245, 245, 0.534);
+  background: rgba(245, 245, 245, 0.201);
   padding: 5%;
 }
 img{

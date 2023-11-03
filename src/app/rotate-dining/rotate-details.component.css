@@ -17,13 +17,11 @@ h3 {
   letter-spacing: 4px;
 }
 P {
-  color: black;
-  text-shadow: 1px 1px whitesmoke;
   text-indent: 5%;
-  font-size: 18px;
-  font-weight: 500;
-  background: rgba(245, 245, 245, 0.605);
-  padding: 10px;
+  color: whitesmoke;
+  text-shadow: 1.5px 1.5px black;
+  font-size: 17px;
+  background: rgba(245, 245, 245, 0.201);
 }
 img {
   display: block;
