@@ -8,10 +8,12 @@ import { NavbarComponent } from './shared/navbar/NavbarComponent.';
 import { PaloComponent } from './palo/palo.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './welcome-page/welcome-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CastawayCayComponent } from './castaway-cay/castaway-cay.component'
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { CastawayCayComponent } from './castaway-cay/castaway-cay.component'
     WelcomeComponent,
     ClubsLoungesComponent,
     CastawayCayComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
-    HttpClientModule, BrowserModule, ReactiveFormsModule, AppRoutingModule, ],
+    HttpClientModule, BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

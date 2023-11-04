@@ -6,6 +6,7 @@ import { CasualRestaurantsComponent } from './Casual-Food/Casual.component';
 import { PaloComponent } from './palo/palo.component';
 import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
 import { CastawayCayComponent } from './castaway-cay/castaway-cay.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'Palo', component: PaloComponent},
   { path: 'clubs-and-lounges', component: ClubsLoungesComponent},
   { path: 'CastawayCay', component: CastawayCayComponent},
+  { path: 'auth', component: AuthComponent}
   ];
+
 
   @NgModule({
   imports:
