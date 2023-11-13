@@ -1,25 +1,53 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './welcome-page/welcome-page.component';
-import { RotateDetailsComponent } from './rotate-dining/rotate-details.component';
-import { CasualRestaurantsComponent } from './Casual-Food/Casual.component';
-import { PaloComponent } from './palo/palo.component';
-import { ClubsLoungesComponent } from './clubs-lounges/clubs-lounges.component';
-import { CastawayCayComponent } from './castaway-cay/castaway-cay.component';
 import { AuthComponent } from './auth/auth.component';
+import { authGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Welcome', pathMatch: 'full'},
-  { path: 'Welcome', component: WelcomeComponent},
-  { path: 'RotationalDining', component: RotateDetailsComponent, children: [
-    {path: ':id', component: RotateDetailsComponent}
-  ] },
-  { path: 'CasualDining', component: CasualRestaurantsComponent},
-  { path: 'Palo', component: PaloComponent},
-  { path: 'clubs-and-lounges', component: ClubsLoungesComponent},
-  { path: 'CastawayCay', component: CastawayCayComponent},
-  { path: 'auth', component: AuthComponent}
+  { path: '',
+  redirectTo: '/Welcome',
+  pathMatch: 'full'},
+  { path: 'auth',
+    canActivate: [authGuard],
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'Welcome',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./welcome-page/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
+    path: 'rotateDining',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./rotate-dining/rotate.module').then((m) => m.RotateModule),
+  },
+  {
+    path: 'casual',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./Casual-Food/casual.module').then((m) => m.CasualModule),
+  },
+  {
+    path: 'Palo',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./palo/palo.module').then((m) => m.PaloModule),
+  },
+  {
+    path: 'clubs-lounges',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./clubs-lounges/club-lounges.module').then((m) => m.ClubsLoungesModuel),
+  },
+  {
+    path: 'CastawayCay',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./castaway-cay/castaway.module').then((m) => m.CastawayModule),
+  }
   ];
 
 

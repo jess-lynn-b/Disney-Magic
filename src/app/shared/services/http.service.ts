@@ -4,13 +4,13 @@ import { tap } from 'rxjs';
 import { CasualDiningService } from 'src/app/Casual-Food/casual.service';
 import { environment } from 'src/environments/environment.development';
 import { CasualDine } from '../models/casual-dine.model';
-const firbaseUrl = environment.firebaseUrl
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  firebaseRootURL =
+  readonly firebaseRootURL =
   "https://disney-magic-7adfe-default-rtdb.firebaseio.com/favorite.json/casual.json"
 
   constructor(

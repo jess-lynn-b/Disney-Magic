@@ -8,7 +8,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"  routerLinkActive="active">
+      <li class="nav-item"  routerLinkActive="active"
+      *ngIf="!isAuthenticated">
         <a class="nav-link" routerLink="/Welcome" >Welcome</a></li>
         <li class="nav-item"  routerLinkActive="active">
         <a class="nav-link" routerLink="/RotationalDining" >Rotational Dining</a></li>
@@ -25,11 +26,18 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/CastawayCay">Castaway Cay</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active"
+      *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/auth">Login</a>
       </li>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuthenticated">
+          <a style="cursor: pointer;"
+          (click)="onSignOut()"
+          >Logout</a>
+        </li>
       </ul>
-    </div>
+    </ul>
   </div>
-</nav>
+
 

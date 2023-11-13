@@ -1,43 +1,64 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { AuthService } from "./auth.service";
+import { AuthService, AuthResData } from "./auth.service";
+import { Observable } from "rxjs";
+import { Router } from "@angular/router";
+import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-auth',
-  templateUrl: './auth.component.html'
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css'],
+  exportAs: 'ngForm'
 })
 export class AuthComponent {
   isLoginMode = true;
-  isLoading = false;
-  error: string = '';
+  errorMsg: string | null = null;
 
-  constructor(private authService: AuthService){}
 
-  onSwitchMode() {
-    this.isLoginMode = !this.isLoginMode;
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    public authObsv: Observable <AuthResData>,
+    ){}
 
-  onSubmit(form: NgForm){
-    if (!form.valid) {
-      return;
-    }
-    const email = form.value.email;
-    const password = form.value.password;
+  onSubmit(form: NgForm) {
 
-    this.isLoading = true;
-    if(this.isLoginMode){
-      //..
-    } else {
-      this.authService.signup(email, password).subscribe(resData => {
-        console.log(resData);
-        this.isLoading = false;
-      }, error => {
-        console.log(error);
-        this.error = 'An error occured!';
-        this.isLoading = false;
+      const { email, password } = form.value;
+
+      if (!form.valid || !email || !password) return;
+
+      if(this.isLoginMode){
+         this.authService.loginWithEmailPassword({
+          email,
+          password,
+        });
+      } else {
+         this.authService.signUpWithEmailPassword({
+          email,
+          password,
+        });
       }
-     );
-    }
-    form.reset();
+
+      this.authObsv.subscribe ({
+        next: (data) => {
+          console.log(data);
+
+          this.router.navigate(['Welcome']);
+        },
+
+        error: (res: HttpErrorResponse) => {
+          console.log(res);
+          this.errorMsg = res?.error?.error?.message || 'Something went wrong!';
+        },
+        complete: () => {
+          console.log('Complete!');
+          form.reset();
+        },
+      });
   }
+
+    toggleAuthMode() {
+      this.isLoginMode = !this.isLoginMode;
+    }
 }

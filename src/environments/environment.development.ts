@@ -1,4 +1,4 @@
 export const environment = {
-  firebaseUrl: "https://disney-magic-7adfe-default-rtdb.firebaseio.com/favorite.json",
-  production: false,
+  production: true,
+  firebaseApiKey: 'AIzaSyCTZ4Ra6Rp8W93jlGdnDu1qI0Hve1ZV6g',
 };
