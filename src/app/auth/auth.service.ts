@@ -1,7 +1,8 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { BehaviorSubject, catchError, tap } from "rxjs";
+import { throwError } from "rxjs";
 import { Router } from "@angular/router";
-import { BehaviorSubject, tap } from "rxjs";
 import { User } from "./user.model";
 import { environment } from "src/environments/environment.development";
 
@@ -29,13 +30,15 @@ export interface AuthResData {
 @Injectable({providedIn: 'root'})
 
 export class AuthService {
-  currUser= new BehaviorSubject<User | null>(null);
-
+  currUser = new BehaviorSubject<User>(null!);
   private tokenExpirationTimer: any;
+
 
   constructor(
     private http: HttpClient,
-    private router: Router){}
+    private router: Router){
+
+    }
 
   signUpWithEmailPassword(authData: AuthReqData){
     if (!authData.email || !authData.password) return;
@@ -45,17 +48,19 @@ export class AuthService {
         ...authData,
         returnSecureToken: true,
       })
-   .pipe(
-     tap((res) => {
-       const { email, localId, idToken, expiresIn} = res;
+      .pipe(
+        catchError(this.handleError),
+        tap(resData => {
 
-       this.handleAuthentication(email, localId, idToken, +expiresIn);
-     })
-   );
-   return authRes;
-  }
-  handleAuthentication(email: string, localId: string, idToken: string, arg3: number) {
-    throw new Error("Method not implemented.");
+
+          this.handleAuthentication(
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            +resData.expiresIn);
+        })
+      );
+      return authRes;
   }
   loginWithEmailPassword(authData: AuthReqData) {
     if (!authData.email || !authData.password) return;
@@ -65,77 +70,97 @@ export class AuthService {
         ...authData,
         returnSecureToken: true,
       })
-    .pipe(
-      tap((res) => {
-        const {email, localId, idToken, expiresIn} = res;
+      .pipe(
+        catchError(this.handleError),
+        tap(resData => {
 
-        this.handleAuth(email, localId, idToken, +expiresIn);
-      })
-    );
-    return authRes;
-  }
-
-  signOut(){
-    this.currUser.next(null);
-    this.router.navigate(['auth']);
+          this.handleAuthentication(
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            +resData.expiresIn);
+        })
+      );
+      return authRes;
   }
 
   autoLoginFromLocalStorage(){
     const userData = localStorage.getItem('userData');
+     if (!userData) return;
 
-    if (!userData) {
-      return;
+      const lsUser: {
+        id: string;
+        email: string;
+        _token: string;
+        _tokenExpDate: string;
+      } = JSON.parse(userData);
+
+      const newUser = new User (
+        lsUser.id,
+        lsUser.email,
+        lsUser._token,
+        new Date(lsUser._tokenExpDate)
+      );
+
+      if (newUser.token) {
+        this.currUser.next(newUser);
+
+    //  const expDuration =
+    //    new Date (lsUser._tokenExpDate).getTime() - new Date().getTime();
+    //  this.autoSignOut(expDuration);
+      }
     }
-    const loadedUser: {
-      id: string;
-      email: string;
-      _token: string;
-      _tokenExperationDate: string;
-    } = JSON.parse(userData);
 
-    const newUser = new User (
-      loadedUser.id,
-      loadedUser.email,
-      loadedUser._token,
-      new Date(loadedUser._tokenExperationDate)
-    );
+  //  autoSignOut(expDuration: number) {
+  //    this.tokenExpirationTimer = setTimeout(() => {
+  //      this.signOut();
+  //    }, expDuration);//
+  //  }
+  signOut() {
+    throw new Error("Method not implemented.");
+  }
 
-    if (newUser.token) {
-      this.currUser.next(newUser);
-
-    const expDuration =
-      new Date(loadedUser._tokenExperationDate).getTime() - new Date().getTime();
-
-    this.autoSignOut(expDuration);
+    private handleAuthentication(
+      email: string,
+      userId: string,
+      token: string,
+      expiresIn: number,
+    ) {
+      const expirationDate = new Date(
+        new Date().getTime() +expiresIn * 1000
+      );
+      const user = new User(
+        email,
+        userId,
+        token,
+        expirationDate
+      );
+      this.currUser.next(user);
+      this.autoLoginFromLocalStorage();
+      localStorage.setItem('userData', JSON. stringify(user));
     }
-  }
 
-  autoSignOut(expDuration: number) {
-    this.tokenExpirationTimer = setTimeout(() => {
-      this.signOut();
-    }, expDuration);
-  }
-  private handleAuth(
-    email: string,
-    userId: string,
-    token: string,
-    expiresIn: number,
-  ) {
-    const expirationDate = new Date (
-      new Date().getTime() + expiresIn * 1000
-    );
-    const newUser = new User (
-      userId,
-      email,
-      token,
-      expirationDate);
-
-    this.currUser.next(newUser);
-
-    this.autoSignOut(expiresIn * 1000);
-
-    localStorage.setItem('userData', JSON.stringify(newUser));
-
-  }
+    private handleError(errorRes: HttpErrorResponse) {
+      let errorMessage = 'An unknown error occured!';
+      if (!errorRes.error || !errorRes.error.error) {
+        return throwError(errorMessage);
+      }
+      switch (errorRes.error.error.message) {
+        case 'EMAIL_PASSWORD':
+          errorMessage = 'Ugh, Oh!! This email or password is invaild!'
+      }
+      return throwError(errorMessage);
+    }
 }
+
+
+function autoSignOut(expDuration: any, number: any) {
+  throw new Error("Function not implemented.");
+}
+
+function signOut() {
+  throw new Error("Function not implemented.");
+}
+
+
 

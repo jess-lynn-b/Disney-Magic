@@ -8,6 +8,7 @@ import {
 import { Injectable } from "@angular/core";
 import { AuthService } from "./auth.service";
 import { Observable, exhaustMap, take } from "rxjs";
+import { User } from "./user.model";
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
@@ -18,18 +19,17 @@ export class AuthInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
     ): Observable<HttpEvent<any>> {
-    const modifiedReq = this.authService.currUser.pipe(
+    return this.authService.currUser.pipe(
       take(1),
-      exhaustMap((user) => {
-        if (!user) return next.handle(req);
-
+      exhaustMap(User => {
+        if (!User) {
+        return next.handle(req);
+        }
         const modifiedReq = req.clone ({
-          params: new HttpParams().set('auth', user.token!),
+          params: new HttpParams().set('auth', User.token!),
         });
         return next.handle(modifiedReq);
       })
     );
-    return modifiedReq;
-
   }
 }

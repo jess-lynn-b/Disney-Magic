@@ -23,7 +23,7 @@ export const authGuard: CanActivateFn = (
           if (route.routeConfig?.path === 'auth' ) {
             return true;
           }
-          return router.createUrlTree(['/auth']);
+          return router.createUrlTree(['/Welcome']);
         }
       })
     );

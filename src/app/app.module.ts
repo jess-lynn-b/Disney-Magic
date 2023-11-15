@@ -5,17 +5,17 @@ import { NavbarComponent } from './shared/navbar/NavbarComponent.';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { SharedModule } from './shared/shared.module';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FavoritesComponent,
 
   ],
   imports: [
-    HttpClientModule, BrowserModule,AppRoutingModule,
-    SharedModule,
+    HttpClientModule, BrowserModule, AppRoutingModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,

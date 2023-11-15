@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, ComponentFactoryResolver, OnDestroy, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService, AuthResData } from "./auth.service";
-import { Observable } from "rxjs";
-import { Router } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
+import { Observable, Subscription } from "rxjs";
+import { Router } from "@angular/router";
+import { PlaceholderDirective } from "../shared/placeholder/placeholder.directive";
 
 @Component({
   selector: 'app-auth',
@@ -11,16 +12,25 @@ import { HttpErrorResponse } from "@angular/common/http";
   styleUrls: ['./auth.component.css'],
   exportAs: 'ngForm'
 })
-export class AuthComponent {
+export class AuthComponent implements OnDestroy{
   isLoginMode = true;
   errorMsg: string | null = null;
+  authObsv: Observable<AuthResData> | any;
+  error: string | null = null;
+  @ViewChild(PlaceholderDirective, { static: false })
+  alertHost!: PlaceholderDirective;
 
+  private closeSub!: Subscription;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    public authObsv: Observable <AuthResData>,
+    private componentFactoryResolver: ComponentFactoryResolver
     ){}
+
+  onSwitchMode() {
+      this.isLoginMode = !this.isLoginMode;
+    }
 
   onSubmit(form: NgForm) {
 
@@ -29,11 +39,13 @@ export class AuthComponent {
       if (!form.valid || !email || !password) return;
 
       if(this.isLoginMode){
+        this.authObsv =
          this.authService.loginWithEmailPassword({
           email,
           password,
         });
       } else {
+        this.authObsv =
          this.authService.signUpWithEmailPassword({
           email,
           password,
@@ -41,7 +53,7 @@ export class AuthComponent {
       }
 
       this.authObsv.subscribe ({
-        next: (data) => {
+        next: (data: any) => {
           console.log(data);
 
           this.router.navigate(['Welcome']);
@@ -57,8 +69,17 @@ export class AuthComponent {
         },
       });
   }
+    
 
     toggleAuthMode() {
       this.isLoginMode = !this.isLoginMode;
     }
+     ngOnDestroy(){
+      if(this.closeSub) {
+        this.closeSub.unsubscribe();
+      }
+     }
+
+
+
 }

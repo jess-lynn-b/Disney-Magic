@@ -8,10 +8,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"  routerLinkActive="active"
-      *ngIf="!isAuthenticated">
+      <li class="nav-item"  routerLinkActive="active">
         <a class="nav-link" routerLink="/Welcome" >Welcome</a></li>
-        <li class="nav-item"  routerLinkActive="active">
+        <li class="nav-item"
+        routerLinkActive="active">
         <a class="nav-link" routerLink="/RotationalDining" >Rotational Dining</a></li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/CasualDining"
@@ -26,18 +26,31 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/CastawayCay">Castaway Cay</a>
       </li>
-      <li class="nav-item" routerLinkActive="active"
-      *ngIf="isAuthenticated">
-        <a class="nav-link" routerLink="/auth">Login</a>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="/Favorites">Favorites</a>
       </li>
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="isAuthenticated">
-          <a style="cursor: pointer;"
-          (click)="onSignOut()"
+      <!-- Auth -->
+      <li class="nav-item"
+      *ngIf="!isAuthenticated">
+        <a
+        class="nav-link"
+        style="cursor: pointer"
+        routerLink="/auth"
+        routerLinkActive="active"
+        >Login</a>
+      </li>
+      <!-- Logout -->
+        <li class="nav-item"
+        *ngIf="isAuthenticated"
+          (click)="onSignOut()">
+          <a
+          class="nav-link"
+          style="cursor: pointer"
+          routerLink="/auth"
+          routerLinkActive="active"
           >Logout</a>
         </li>
       </ul>
-    </ul>
   </div>
 
 

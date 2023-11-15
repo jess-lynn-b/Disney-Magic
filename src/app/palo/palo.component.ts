@@ -16,7 +16,7 @@ export class PaloComponent{
   constructor (
     private paloService: PaloDiningService
   ){
-    this.title = 'title',
+    this.title = 'title';
     this.details = 'details';
     this.imagePath = 'imagePath';
     this.paloData = [];

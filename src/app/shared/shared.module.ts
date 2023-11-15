@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.component";
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
   declarations:[
@@ -13,14 +14,13 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     //Pipes
   ],
   imports: [
-  CommonModule,
   RouterModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  CommonModule
 ],
   exports: [
     //Modules
-    CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,

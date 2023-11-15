@@ -13,41 +13,9 @@ h3 {
 p{
   text-align: left;
   text-indent: 5%;
-}
-.info{
-  position:relative;
-  padding: 1em;
+  background: rgba(252, 252, 252, 0.681);
   color: black;
-  text-shadow: 1px 1px white;
-  text-indent: 5%;
+  font-weight: 500;
+  font-size: 16px;
 }
-.boxed{
-  border: 3px solid black;
-  box-sizing: content-box;
-  width: 150px;
-  text-indent: 8%;
-}
-h4{
-  color: darkblue
-}
-.top-left{
-  top: 8px;
-  left: 16px;
-}
-input.ng-vaild.ng-touched,
-textarea.ng-vaild.ng-touched {
-  border: 1px solid red;
-}
-.transparent-bg{
-  background: transparent;
-}
-form{
-  background-color: aliceblue;
-  width: 100%;
-  padding: 1em;
-}
-
-
-
-
 

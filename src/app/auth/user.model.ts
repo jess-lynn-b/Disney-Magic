@@ -1,4 +1,5 @@
 export class User {
+  static Data_tokenExpirationDate: string | number | Date;
 
   constructor (
     public email: string,
@@ -7,10 +8,10 @@ export class User {
     private _tokenExpirationDate: Date
   ) {}
 
-  public get token(){
-    if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate)return null;
-
+  get token(){
+    if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
+      return null;
+    }
     return this._token;
   }
 }
-

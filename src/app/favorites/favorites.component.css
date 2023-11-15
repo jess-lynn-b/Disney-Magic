@@ -1,0 +1,58 @@
+.image-container{
+  background-image: url("https://mymickeyvacation.com/wp-content/uploads/2021/03/Disney-cruise-line-scaled.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10%;
+}
+h3 {
+  padding-top: 5%;
+  text-align: center;
+  color:darkred;
+  text-shadow: 2px 2px white;
+}
+h4{
+  color: black;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+h6 {
+  color: black;
+  font-size: 17px;
+  text-shadow: 1px 1px whitesmoke;
+}
+.info{
+  position:relative;
+  padding: 1em;
+  color: black;
+  text-shadow: 1px 1px white;
+  text-indent: 5%;
+}
+.formContainer{
+  position: relative;
+  max-width: 400px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  background-color: aliceblue;
+  padding: 40px;
+  border: 1px solid black;
+  border-radius: 50px;
+  text-indent: 6%;
+  border-spacing: 10%;
+  font-size: 16px;
+  text-align:justify;
+  letter-spacing: 2px ;
+}
+input.ng-vaild.ng-touched,
+textarea.ng-vaild.ng-touched {
+  border: 1px solid red;
+}
+label{
+  color:black;
+  text-align: center;
+  position: relative;
+}
+.transparent-bg{
+  background: transparent;
+}
+

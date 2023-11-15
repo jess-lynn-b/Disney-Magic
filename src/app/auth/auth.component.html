@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <!--<div
-      *ngIf="isLoading"
-      style="text-align: center;">
+
+      <!--*ngIf="isLoading"-->
+      <div style="text-align: center;">
       <app-loading-spinner></app-loading-spinner>
-    </div>-->
+    </div>
     <!-- Email -->
     <form
     #authForm= "ngForm"
-    (ngSubmit)="onSubmit(authForm)"
-    >
+    (ngSubmit)="onSubmit(authForm)">
+    <!--*ngIf ="!isLoading"-->
       <div class="form-group">
         <label for="email">E-Mail</label>
         <input
@@ -20,7 +20,7 @@
         name="email"
         required
         email
-        ngModel/>
+        autocomplete="on">
       </div>
       <!-- Password -->
       <div class="form-group">
@@ -28,28 +28,28 @@
         <input
         type="password"
         id="password"
-        name="password"
         class="form-control"
-        required
         ngModel
-        minlength="6"/>
+        name="password"
+        required
+        minlength="6"
+        autocomplete="off">
       </div>
       <!-- Actions -->
-      <div class="form-group d-flex justify-content-between">
+      <div>
         <button
         class="btn btn-primary"
         type="submit"
         [disabled]= "!authForm.valid"
         >
-        {{ isLoginMode ? "Login" : "Login"}}
+        {{ isLoginMode ? 'Login' : 'SignUp'}}
         </button>
 
         <button
-        class="btn btn-sm btn-transparent text-primary"
+        class="btn btn-primary"
+        (click)="onSwitchMode()"
         type="button"
-        (click)="toggleAuthMode()"
-        >
-        Switch to {{ isLoginMode ? "Login" : "Login" }}
+        >Switch to {{ isLoginMode ? 'SignUp' : 'Login' }}
       </button>
       </div>
     </form>

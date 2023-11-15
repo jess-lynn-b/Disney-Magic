@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "../shared/shared.module";
 import { PaloComponent } from "./palo.component";
-import { RouterModule } from "@angular/router";
 import { PaloRoutingModuel } from "./palo-routing.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule ({
   declarations: [
@@ -12,7 +12,8 @@ import { PaloRoutingModuel } from "./palo-routing.module";
   ],
   imports: [
     SharedModule,
-    PaloRoutingModuel
+    PaloRoutingModuel,
+    CommonModule
   ]
 })
 export class PaloModule {}

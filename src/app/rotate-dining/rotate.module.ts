@@ -1,21 +1,21 @@
 import { NgModule } from "@angular/core";
-import { RotateDetailsComponent } from "./rotate-details.component";
-import { RotateListComponent } from "./rotate-list.component";
+
 import { SharedModule } from "../shared/shared.module";
 import { RotateRoutingModule } from "./rotate-routing.module";
+import { RotateDetailsComponent } from "./rotate-details.component";
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
   declarations: [
     //Components
-    RotateDetailsComponent,
-    RotateListComponent
+    RotateDetailsComponent
     //Directives
 
     //Pipes
   ],
   imports: [
-    SharedModule,RotateRoutingModule
+    SharedModule,RotateRoutingModule, CommonModule
   ]
 })
 export class RotateModule{}
